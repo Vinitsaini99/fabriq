@@ -194,13 +194,12 @@ export default function Example() {
         </div>
       </Dialog>
 
-      <header className="relative bg-white">
-        <p className="flex h-1 items-center justify-center  sm:px-6 lg:px-8">
-        
-        </p>
+      <header className="relative translate-px">
+       <p className="h-0 m-0 p-0"></p>
+
 
         <nav aria-label="Top" className="mx-auto max-w-1xl px-3 bg-blue-100  ">
-          <div className="border-b border-gray-200">
+          <div >
             <div className="flex h-16 items-center">
               <button
                 type="button"

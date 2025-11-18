@@ -1,1 +1,10 @@
 @import "tailwindcss";
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+.snap-start {
+  scroll-snap-align: start;
+}
+.swiper-slide {
+  border-right: 10px solid #fff; /* white gap between items */
+}
