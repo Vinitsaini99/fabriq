@@ -1,6 +1,8 @@
-'use client'
+"use client";
+import { Link } from "react-router-dom"
 
-import { Fragment, useState } from 'react'
+
+import { Fragment, useState } from "react";
 import {
   Dialog,
   DialogBackdrop,
@@ -14,62 +16,64 @@ import {
   TabList,
   TabPanel,
   TabPanels,
-} from '@headlessui/react'
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
+} from "@headlessui/react";
+import {
+  Bars3Icon,
+  MagnifyingGlassIcon,
+  ShoppingBagIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 
 const navigation = {
   categories: [
     {
-      id: 'women',
-      name: 'Category',
+      id: "women",
+      name: "Category",
       featured: [
         {
-          name: 'New Arrivals',
-          href: '#',
-          imageSrc: '/src/assets/images.jpeg',
-          imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
+          name: "New Arrivals",
+          href: "#",
+          imageSrc: "/src/assets/images.jpeg",
+          imageAlt:
+            "Models sitting back to back, wearing Basic Tee in black and bone.",
         },
         {
-          name: 'Most selling',
-          href: '#',
-          imageSrc: '/src/assets/1.The_Rich_Heritage_Behind_Rajasthani_Saree_Draping_480x480.webp',
-          imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+          name: "Most selling",
+          href: "#",
+          imageSrc:
+            "/src/assets/1.The_Rich_Heritage_Behind_Rajasthani_Saree_Draping_480x480.webp",
+          imageAlt:
+            "Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.",
         },
       ],
       sections: [
         {
-          id: 'clothing',
-          name: 'Collection',
+          id: "clothing",
+          name: "Collection",
           items: [
-            { name: 'Tops', href: '#' },
-            { name: 'Banarasi', href: '#' },
-            { name: 'Kanjeevaram', href: '#' },
-            { name: 'Paithani', href: '#' },
-            { name: 'Bandhani', href: '#' },
-           
+            { name: "Tops", href: "#" },
+            { name: "Banarasi", href: "#" },
+            { name: "Kanjeevaram", href: "#" },
+            { name: "Paithani", href: "#" },
+            { name: "Bandhani", href: "#" },
           ],
         },
         {
-          id: 'accessories',
-          name: 'FabriQ',
-          items: [
-            { name: 'Watches', href: '#' },
-           
-          ],
+          id: "accessories",
+          name: "FabriQ",
+          items: [{ name: "Watches", href: "#" }],
         },
-       
       ],
     },
-   
   ],
   pages: [
-    { name: 'Company', href: '#' },
-    { name: 'Stores', href: '#' },
+    { name: "Company", href: "/src/components/Company.jsx" },
+    { name: "Stores", href: "#" },
   ],
-}
+};
 
 export default function Example() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="bg-white">
@@ -112,17 +116,26 @@ export default function Example() {
               </div>
               <TabPanels as={Fragment}>
                 {navigation.categories.map((category) => (
-                  <TabPanel key={category.name} className="space-y-10 px-4 pt-10 pb-8">
+                  <TabPanel
+                    key={category.name}
+                    className="space-y-10 px-4 pt-10 pb-8"
+                  >
                     <div className="grid grid-cols-2 gap-x-4">
                       {category.featured.map((item) => (
-                        <div key={item.name} className="group relative text-sm">
+                        <div key={item.name} className="group relative text-lg">
                           <img
                             alt={item.imageAlt}
                             src={item.imageSrc}
                             className="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
                           />
-                          <a href={item.href} className="mt-6 block font-medium text-gray-900">
-                            <span aria-hidden="true" className="absolute inset-0 z-10" />
+                          <a
+                            href={item.href}
+                            className="mt-6 block font-medium text-gray-900"
+                          >
+                            <span
+                              aria-hidden="true"
+                              className="absolute inset-0 z-10"
+                            />
                             {item.name}
                           </a>
                           <p aria-hidden="true" className="mt-1">
@@ -133,7 +146,10 @@ export default function Example() {
                     </div>
                     {category.sections.map((section) => (
                       <div key={section.name}>
-                        <p id={`${category.id}-${section.id}-heading-mobile`} className="font-medium text-gray-900">
+                        <p
+                          id={`${category.id}-${section.id}-heading-mobile`}
+                          className="font-medium text-gray-900"
+                        >
                           {section.name}
                         </p>
                         <ul
@@ -143,7 +159,10 @@ export default function Example() {
                         >
                           {section.items.map((item) => (
                             <li key={item.name} className="flow-root">
-                              <a href={item.href} className="-m-2 block p-2 text-gray-500">
+                              <a
+                                href={item.href}
+                                className="-m-2 block p-2 text-gray-500"
+                              >
                                 {item.name}
                               </a>
                             </li>
@@ -159,7 +178,10 @@ export default function Example() {
             <div className="space-y-6 border-t border-gray-200 px-4 py-6">
               {navigation.pages.map((page) => (
                 <div key={page.name} className="flow-root">
-                  <a href={page.href} className="-m-2 block p-2 font-medium text-gray-900">
+                  <a
+                    href={page.href}
+                    className="-m-2 block p-2 font-medium text-gray-900"
+                  >
                     {page.name}
                   </a>
                 </div>
@@ -168,43 +190,29 @@ export default function Example() {
 
             <div className="space-y-6 border-t border-gray-200 px-4 py-6">
               <div className="flow-root">
-                <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
+                <a
+                  href="#"
+                  className="-m-2 block p-2 font-medium text-gray-900"
+                >
                   Sign in
                 </a>
               </div>
-              <div className="flow-root">
-                <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
-                  Create account
-                </a>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-200 px-4 py-6">
-              <a href="#" className="-m-2 flex items-center p-2">
-                <img
-                  alt=""
-                  src="https://tailwindcss.com/plus-assets/img/flags/flag-canada.svg"
-                  className="block h-auto w-5 shrink-0"
-                />
-                <span className="ml-3 block text-base font-medium text-gray-900">CAD</span>
-                <span className="sr-only">, change currency</span>
-              </a>
             </div>
           </DialogPanel>
         </div>
       </Dialog>
 
-      <header className="relative translate-px">
-       <p className="h-0 m-0 p-0"></p>
-
-
-        <nav aria-label="Top" className="mx-auto max-w-1xl px-3 bg-blue-100  ">
-          <div >
+      <header className="relative bg-white">
+        <nav
+          aria-label="Top"
+          className="mx-auto max-w-9xl px-4 sm:px-6 lg:px-8"
+        >
+          <div className="border-b border-gray-200">
             <div className="flex h-16 items-center">
               <button
                 type="button"
                 onClick={() => setOpen(true)}
-                className="relative rounded-md bg-blue-100 p-2 text-gray-400 lg:hidden"
+                className="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
               >
                 <span className="absolute -inset-0.5" />
                 <span className="sr-only">Open menu</span>
@@ -213,14 +221,16 @@ export default function Example() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
+                {" "}
                 <a href="#">
-                  <span className="sr-only">Your Company</span>
+                  {" "}
+                  <span className="sr-only">Your Company</span>{" "}
                   <img
                     alt=""
                     src="/src/assets/ChatGPT Image Nov 1, 2025, 06_53_16 PM.png"
                     className="h-20 w-auto"
-                  />
-                </a>
+                  />{" "}
+                </a>{" "}
               </div>
 
               {/* Flyout menus */}
@@ -229,7 +239,7 @@ export default function Example() {
                   {navigation.categories.map((category) => (
                     <Popover key={category.name} className="flex">
                       <div className="relative flex">
-                        <PopoverButton className="group relative flex items-center justify-center text-sm font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800 data-open:text-indigo-600">
+                        <PopoverButton className="group relative flex items-center justify-center text-lg font-medium text-gray-700 transition-colors duration-200 ease-out hover:text-gray-800 data-open:text-indigo-600">
                           {category.name}
                           <span
                             aria-hidden="true"
@@ -239,23 +249,35 @@ export default function Example() {
                       </div>
                       <PopoverPanel
                         transition
-                        className="absolute inset-x-0 top-full z-20 w-full bg-white text-sm text-gray-500 transition data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+                        className="absolute inset-x-0 top-full z-20 w-full bg-white text-lg text-gray-500 transition data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
                       >
                         {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                        <div aria-hidden="true" className="absolute inset-0 top-1/2 bg-white shadow-sm" />
+                        <div
+                          aria-hidden="true"
+                          className="absolute inset-0 top-1/2 bg-white shadow-sm"
+                        />
                         <div className="relative bg-white">
                           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                             <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
                               <div className="col-start-2 grid grid-cols-2 gap-x-8">
                                 {category.featured.map((item) => (
-                                  <div key={item.name} className="group relative text-base sm:text-sm">
+                                  <div
+                                    key={item.name}
+                                    className="group relative text-base sm:text-lg"
+                                  >
                                     <img
                                       alt={item.imageAlt}
                                       src={item.imageSrc}
                                       className="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75"
                                     />
-                                    <a href={item.href} className="mt-6 block font-medium text-gray-900">
-                                      <span aria-hidden="true" className="absolute inset-0 z-10" />
+                                    <a
+                                      href={item.href}
+                                      className="mt-6 block font-medium text-gray-900"
+                                    >
+                                      <span
+                                        aria-hidden="true"
+                                        className="absolute inset-0 z-10"
+                                      />
                                       {item.name}
                                     </a>
                                     <p aria-hidden="true" className="mt-1">
@@ -264,10 +286,13 @@ export default function Example() {
                                   </div>
                                 ))}
                               </div>
-                              <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
+                              <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-lg">
                                 {category.sections.map((section) => (
                                   <div key={section.name}>
-                                    <p id={`${section.name}-heading`} className="font-medium text-gray-900">
+                                    <p
+                                      id={`${section.name}-heading`}
+                                      className="font-medium text-gray-900"
+                                    >
                                       {section.name}
                                     </p>
                                     <ul
@@ -277,7 +302,10 @@ export default function Example() {
                                     >
                                       {section.items.map((item) => (
                                         <li key={item.name} className="flex">
-                                          <a href={item.href} className="hover:text-gray-800">
+                                          <a
+                                            href={item.href}
+                                            className="hover:text-gray-800"
+                                          >
                                             {item.name}
                                           </a>
                                         </li>
@@ -296,7 +324,7 @@ export default function Example() {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                      className="flex items-center text-lg font-medium text-gray-700 hover:text-gray-800"
                     >
                       {page.name}
                     </a>
@@ -306,19 +334,22 @@ export default function Example() {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a href="#" className="text-sm font-medium text-gray-700 hover:text-gray-800">
+                  <a
+                    href="#"
+                    className="text-lg font-medium text-gray-700 hover:text-gray-800"
+                  >
                     Sign in
                   </a>
-                  
                 </div>
-
-               
 
                 {/* Search */}
                 <div className="flex lg:ml-6">
                   <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
-                    <MagnifyingGlassIcon aria-hidden="true" className="size-6" />
+                    <MagnifyingGlassIcon
+                      aria-hidden="true"
+                      className="size-6"
+                    />
                   </a>
                 </div>
 
@@ -329,7 +360,9 @@ export default function Example() {
                       aria-hidden="true"
                       className="size-6 shrink-0 text-gray-400 group-hover:text-gray-500"
                     />
-                    <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+                    <span className="ml-2 text-lg font-medium text-gray-700 group-hover:text-gray-800">
+                      0
+                    </span>
                     <span className="sr-only">items in cart, view bag</span>
                   </a>
                 </div>
@@ -339,5 +372,5 @@ export default function Example() {
         </nav>
       </header>
     </div>
-  )
+  );
 }

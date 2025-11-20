@@ -22,6 +22,7 @@ const Home = () => {
       <div className="mt-0 pt-0">
         <ProductShowcase/>
       </div>
+      
     </>
   )
 }
