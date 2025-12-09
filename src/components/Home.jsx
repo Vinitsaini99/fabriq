@@ -13,7 +13,7 @@ const Home = () => {
 
       {/* FIXED: my-8 removed — now much smaller space */}
       <h1 
-        className="text-3xl font-bold text-center mt-1 mb-4 !text-purple-600"
+        className="text-3xl font-bold text-center mt-1 mb-4 text-purple-600"
         style={{ textShadow: "2px 2px 6px rgba(128, 0, 128, 0.5)" }}
       >
         Best selling Products

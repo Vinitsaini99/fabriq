@@ -5,7 +5,7 @@ import Product from "./product";
 
 function ProductCarousel() {
   return (
-    <div className="w-full h-[500px] bg-purple-700 overflow-hidden"> 
+    <div className="w-full h-[500px]  overflow-hidden"> 
       {/* Outer div with height + width */}
 
       <Carousel interval={3000} className="w-full h-full">

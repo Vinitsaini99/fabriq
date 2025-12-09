@@ -51,11 +51,11 @@ const navigation = {
           id: "clothing",
           name: "Collection",
           items: [
-            { name: "Tops", href: "#" },
-            { name: "Banarasi", href: "#" },
-            { name: "Kanjeevaram", href: "#" },
-            { name: "Paithani", href: "#" },
-            { name: "Bandhani", href: "#" },
+            { name: "Tops", href: "/src/pages/Top.jsx " },
+            { name: "Banarasi", href: "/src/pages/banarsi.jsx" },
+            { name: "Kanjeevaram", href: "/kanjeeram" },
+            { name: "Paithani", href: "/paithani" },
+            { name: "Bandhani", href: "/bandhani" },
           ],
         },
         {
@@ -68,7 +68,7 @@ const navigation = {
   ],
   pages: [
     { name: "Company", href: "/src/components/Company.jsx" },
-    { name: "Stores", href: "#" },
+    { name: "Stores", href: "/src/components/about.jsx" },
   ],
 };
 
@@ -86,7 +86,7 @@ export default function Example() {
         <div className="fixed inset-0 z-40 flex">
           <DialogPanel
             transition
-            className="relative flex w-full max-w-xs transform flex-col overflow-y-auto bg-white pb-12 shadow-xl transition duration-300 ease-in-out data-closed:-translate-x-full"
+            className="relative flex w-full max-w-xs transform flex-col overflow-y-auto bg-rose-700 pb-12 shadow-xl transition duration-300 ease-in-out data-closed:-translate-x-full"
           >
             <div className="flex px-4 pt-5 pb-2">
               <button
@@ -202,7 +202,7 @@ export default function Example() {
         </div>
       </Dialog>
 
-      <header className="relative bg-white">
+      <header className="relative  bg-rose-700">
         <nav
           aria-label="Top"
           className="mx-auto max-w-9xl px-4 sm:px-6 lg:px-8"
