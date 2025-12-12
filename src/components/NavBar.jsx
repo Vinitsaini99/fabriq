@@ -1,6 +1,5 @@
 "use client";
-import { Link } from "react-router-dom"
-
+import { Link } from "react-router-dom";
 
 import { Fragment, useState } from "react";
 import {
@@ -51,8 +50,8 @@ const navigation = {
           id: "clothing",
           name: "Collection",
           items: [
-            { name: "Tops", href: "/src/pages/Top.jsx " },
-            { name: "Banarasi", href: "/src/pages/banarsi.jsx" },
+            { name: "Tops", href: "/Top " },
+            { name: "Banarasi", href: "/banarsi" },
             { name: "Kanjeevaram", href: "/kanjeeram" },
             { name: "Paithani", href: "/paithani" },
             { name: "Bandhani", href: "/bandhani" },
@@ -67,8 +66,8 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "Company", href: "/src/components/Company.jsx" },
-    { name: "Stores", href: "/src/components/about.jsx" },
+    { name: "Company", href: "/company" },
+    { name: "Stores", href: "/about" },
   ],
 };
 
@@ -222,7 +221,7 @@ export default function Example() {
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
                 {" "}
-                <a href="#">
+                <a href="/">
                   {" "}
                   <span className="sr-only">Your Company</span>{" "}
                   <img

@@ -3,7 +3,7 @@ import { Globe } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-rose-700 py-10 px-4 sm:px-12 lg:px-24 mt-20">
+    <footer className="bg-rose-700 py-10 px-4 sm:px-12  lg:px-24 mt-20">
       
       {/* Top Section */}
       <div className="max-w-7xl text-white mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 border-b border-amber-700 pb-8 text-center sm:text-left">
